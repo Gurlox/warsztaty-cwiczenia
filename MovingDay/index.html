@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Day</title>
+        <style>
+            html {
+                background: rgb(60, 60, 60);
+            }
+
+            .container {
+                position: relative;
+                margin: 0 auto;
+                background: rgb(60, 60, 60);
+                width: 800px;
+                height: 800px;
+            }
+
+            .sky {
+                text-align: center;
+                overflow: hidden;
+                position: absolute;
+                border-radius: 45%;
+                width: 800px;
+                height: 800px;
+                background: rgb(62, 163, 255);
+                animation-name: sky-animation;
+                animation-duration: 20s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-transition: background 20s linear;
+            }
+
+            .curtain {
+                position: absolute;
+                bottom: 0px;
+                background: rgb(60, 60, 60);
+                width: 800px;
+                height: 400px;
+            }
+
+            .grass {
+                background: rgb(25, 120, 37);
+                width: 800px;
+                height: 150px;
+            }
+
+            .moon {
+                position: absolute;
+                left: 300px;
+                bottom: 0px;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                box-shadow: 35px 35px 0 0 silver;
+                animation-name: animation;
+                animation-duration: 20s;
+                animation-timing-function: linear;
+                animation-delay: 10s;
+                animation-iteration-count: infinite;
+            }
+
+            .sun {
+                position: absolute;
+                left: 300px;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                background: rgb(250, 255, 1);
+                animation-name: animation;
+                animation-duration: 20s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes sky-animation {
+                0% {
+                    background: rgb(27, 74, 214);
+                }
+                30% {
+                    background: rgb(62, 163, 255);
+                }
+                75% {
+                    background: rgb(0, 13, 98);
+                }
+                100% {
+                    background: rgb(27, 74, 214);
+                }
+            }
+
+            @keyframes animation {
+                0% {
+                    top: 400px;
+                }
+                25% {
+                    top: 0px;
+                }
+                50% {
+                    top: -200px;
+                }
+                100% {
+                    top: -200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="sky">
+                    <div class="moon"></div>
+                    <div class="sun"></div>
+                </div>
+                <div class="curtain">
+                    <div class="grass"></div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
