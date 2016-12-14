@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>JS</title>
+   </head>
+   <body>
+      <main>
+         <input type="text" placeholder="Imię króliczka" id="bunny-name-input">
+         <button id="add-bunny">Dodaj</button>
+         <div id="container">
+
+         </div>
+      </main>
+      <script type="text/javascript">
+
+         var appendBunny = {
+            bunnies: [
+               {
+                  name: "Koko"
+               },
+               {
+                  name: "Pipi"
+               }
+            ],
+            cacheDom: function(){
+               this.container = document.getElementById("container"),
+               this.button = document.getElementById("add-bunny"),
+               this.nameInput = document.getElementById("bunny-name-input");
+            },
+            events: function(){
+               this.button.addEventListener("click", this.addBunny.bind(this));
+            },
+            init: function(){
+               this.cacheDom();
+               this.events();
+               this.render();
+            },
+            render: function(){
+               var container = this.container;
+               this.bunnies.forEach(function(item){
+                  container.appendChild("hehe<br>");
+               });
+            },
+            addBunny: function(){
+               this.bunnies.push(this.nameInput.value);
+               this.render();
+            }
+         };
+
+         appendBunny.init();
+      </script>
+   </body>
+</html>
